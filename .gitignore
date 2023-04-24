@@ -1,0 +1,65 @@
+# Ignore bin and obj folders
+bin/
+obj/
+
+# Ignore user-specific files
+*.suo
+*.user
+*.userprefs
+*.vs/
+*.vshost.exe
+*.vshost.exe.config
+
+# Ignore build output
+[Tt]est[Rr]esult*/
+[Bb]in/
+[Oo]bj/
+
+# Ignore NuGet packages
+packages/
+*.nupkg
+*.snupkg
+**/project.lock.json
+**/project.fragment.lock.json
+*.nuget.props
+*.paket.props
+*.paket.targets
+
+# Ignore other unnecessary files
+*.cache
+*.log
+*.vspscc
+*.psess
+*.dbmdl
+*.rdlc.data
+*.dbproj.user
+*.sln.docstates
+*.suo
+*.sln.cache
+*.csproj.user
+*.scc
+*.sln.ide
+
+# Ignore Resharper files
+_ReSharper*/
+*.resharper
+*.DotSettings
+*.csproj.DotSettings.user
+
+# Ignore Visual Studio files
+*.csproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.nuget/
+*.dotCover
+
+# Ignore other generated files
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+[Bb]in/
+obj/

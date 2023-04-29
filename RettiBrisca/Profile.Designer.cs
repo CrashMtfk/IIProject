@@ -45,38 +45,45 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.Location = new System.Drawing.Point(13, 13);
+            this.txtUserName.BackColor = System.Drawing.SystemColors.Control;
+            this.txtUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtUserName.Location = new System.Drawing.Point(17, 16);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.ReadOnly = true;
-            this.txtUserName.Size = new System.Drawing.Size(100, 20);
+            this.txtUserName.Size = new System.Drawing.Size(132, 22);
             this.txtUserName.TabIndex = 0;
             this.txtUserName.Text = "User\'s Name";
+            this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
             // lblUserPoints
             // 
             this.lblUserPoints.AutoSize = true;
-            this.lblUserPoints.Location = new System.Drawing.Point(10, 39);
+            this.lblUserPoints.Location = new System.Drawing.Point(13, 48);
+            this.lblUserPoints.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserPoints.Name = "lblUserPoints";
-            this.lblUserPoints.Size = new System.Drawing.Size(42, 13);
+            this.lblUserPoints.Size = new System.Drawing.Size(55, 17);
             this.lblUserPoints.TabIndex = 1;
             this.lblUserPoints.Text = "Points :";
             // 
             // txtPriceTitle
             // 
-            this.txtPriceTitle.Location = new System.Drawing.Point(127, 101);
+            this.txtPriceTitle.Location = new System.Drawing.Point(169, 124);
+            this.txtPriceTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPriceTitle.Name = "txtPriceTitle";
             this.txtPriceTitle.ReadOnly = true;
-            this.txtPriceTitle.Size = new System.Drawing.Size(100, 20);
+            this.txtPriceTitle.Size = new System.Drawing.Size(132, 22);
             this.txtPriceTitle.TabIndex = 2;
             this.txtPriceTitle.Text = "PRICES";
             this.txtPriceTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtDiscountsTitle
             // 
-            this.txtDiscountsTitle.Location = new System.Drawing.Point(489, 100);
+            this.txtDiscountsTitle.Location = new System.Drawing.Point(652, 123);
+            this.txtDiscountsTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDiscountsTitle.Name = "txtDiscountsTitle";
             this.txtDiscountsTitle.ReadOnly = true;
-            this.txtDiscountsTitle.Size = new System.Drawing.Size(132, 20);
+            this.txtDiscountsTitle.Size = new System.Drawing.Size(175, 22);
             this.txtDiscountsTitle.TabIndex = 3;
             this.txtDiscountsTitle.Text = "AVAILABLE DISCOUNTS";
             this.txtDiscountsTitle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -84,50 +91,56 @@
             // discountsTable
             // 
             this.discountsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.discountsTable.Location = new System.Drawing.Point(434, 126);
+            this.discountsTable.Location = new System.Drawing.Point(579, 155);
+            this.discountsTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.discountsTable.Name = "discountsTable";
-            this.discountsTable.Size = new System.Drawing.Size(240, 239);
+            this.discountsTable.Size = new System.Drawing.Size(320, 294);
             this.discountsTable.TabIndex = 4;
             // 
             // pricesTable
             // 
             this.pricesTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.pricesTable.Location = new System.Drawing.Point(65, 126);
+            this.pricesTable.Location = new System.Drawing.Point(87, 155);
+            this.pricesTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pricesTable.Name = "pricesTable";
-            this.pricesTable.Size = new System.Drawing.Size(240, 238);
+            this.pricesTable.Size = new System.Drawing.Size(320, 293);
             this.pricesTable.TabIndex = 5;
             // 
             // txtDiscountTitle
             // 
-            this.txtDiscountTitle.Location = new System.Drawing.Point(434, 373);
+            this.txtDiscountTitle.Location = new System.Drawing.Point(579, 459);
+            this.txtDiscountTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtDiscountTitle.Name = "txtDiscountTitle";
-            this.txtDiscountTitle.Size = new System.Drawing.Size(152, 20);
+            this.txtDiscountTitle.Size = new System.Drawing.Size(201, 22);
             this.txtDiscountTitle.TabIndex = 6;
             this.txtDiscountTitle.Text = "Discount\'s name";
             // 
             // btnAddDiscount
             // 
-            this.btnAddDiscount.Location = new System.Drawing.Point(589, 373);
+            this.btnAddDiscount.Location = new System.Drawing.Point(785, 459);
+            this.btnAddDiscount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddDiscount.Name = "btnAddDiscount";
-            this.btnAddDiscount.Size = new System.Drawing.Size(85, 20);
+            this.btnAddDiscount.Size = new System.Drawing.Size(113, 25);
             this.btnAddDiscount.TabIndex = 7;
             this.btnAddDiscount.Text = "Get Discount";
             this.btnAddDiscount.UseVisualStyleBackColor = true;
             // 
             // txtUserPoints
             // 
-            this.txtUserPoints.Location = new System.Drawing.Point(50, 36);
+            this.txtUserPoints.Location = new System.Drawing.Point(67, 44);
+            this.txtUserPoints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUserPoints.Name = "txtUserPoints";
             this.txtUserPoints.ReadOnly = true;
-            this.txtUserPoints.Size = new System.Drawing.Size(100, 20);
+            this.txtUserPoints.Size = new System.Drawing.Size(132, 22);
             this.txtUserPoints.TabIndex = 8;
             this.txtUserPoints.Text = "User\'s points";
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(713, 10);
+            this.btnExit.Location = new System.Drawing.Point(951, 12);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.Size = new System.Drawing.Size(100, 28);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -135,18 +148,20 @@
             // 
             // btnMakeAppointment
             // 
-            this.btnMakeAppointment.Location = new System.Drawing.Point(127, 370);
+            this.btnMakeAppointment.Location = new System.Drawing.Point(169, 455);
+            this.btnMakeAppointment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMakeAppointment.Name = "btnMakeAppointment";
-            this.btnMakeAppointment.Size = new System.Drawing.Size(108, 23);
+            this.btnMakeAppointment.Size = new System.Drawing.Size(144, 28);
             this.btnMakeAppointment.TabIndex = 10;
             this.btnMakeAppointment.Text = "Make Appointment";
             this.btnMakeAppointment.UseVisualStyleBackColor = true;
+            this.btnMakeAppointment.Click += new System.EventHandler(this.btnMakeAppointment_Click);
             // 
             // Profile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnMakeAppointment);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.txtUserPoints);
@@ -158,6 +173,7 @@
             this.Controls.Add(this.txtPriceTitle);
             this.Controls.Add(this.lblUserPoints);
             this.Controls.Add(this.txtUserName);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Profile";
             this.Text = "Profile";
             ((System.ComponentModel.ISupportInitialize)(this.discountsTable)).EndInit();

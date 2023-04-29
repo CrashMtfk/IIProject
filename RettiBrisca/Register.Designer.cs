@@ -47,7 +47,7 @@
             // txtRegisterTitle
             // 
             this.txtRegisterTitle.Location = new System.Drawing.Point(479, 65);
-            this.txtRegisterTitle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtRegisterTitle.Margin = new System.Windows.Forms.Padding(4);
             this.txtRegisterTitle.Name = "txtRegisterTitle";
             this.txtRegisterTitle.ReadOnly = true;
             this.txtRegisterTitle.Size = new System.Drawing.Size(132, 22);
@@ -78,7 +78,7 @@
             // 
             this.txtPhoneRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhoneRegister.Location = new System.Drawing.Point(449, 382);
-            this.txtPhoneRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPhoneRegister.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhoneRegister.Name = "txtPhoneRegister";
             this.txtPhoneRegister.Size = new System.Drawing.Size(199, 30);
             this.txtPhoneRegister.TabIndex = 6;
@@ -107,7 +107,7 @@
             // 
             this.txtFullNameRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFullNameRegister.Location = new System.Drawing.Point(449, 315);
-            this.txtFullNameRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFullNameRegister.Margin = new System.Windows.Forms.Padding(4);
             this.txtFullNameRegister.Name = "txtFullNameRegister";
             this.txtFullNameRegister.Size = new System.Drawing.Size(199, 30);
             this.txtFullNameRegister.TabIndex = 9;
@@ -116,8 +116,9 @@
             // 
             this.txtPasswordRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPasswordRegister.Location = new System.Drawing.Point(449, 245);
-            this.txtPasswordRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPasswordRegister.Margin = new System.Windows.Forms.Padding(4);
             this.txtPasswordRegister.Name = "txtPasswordRegister";
+            this.txtPasswordRegister.PasswordChar = '*';
             this.txtPasswordRegister.Size = new System.Drawing.Size(199, 30);
             this.txtPasswordRegister.TabIndex = 10;
             // 
@@ -125,7 +126,7 @@
             // 
             this.textUsernameRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textUsernameRegister.Location = new System.Drawing.Point(449, 172);
-            this.textUsernameRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textUsernameRegister.Margin = new System.Windows.Forms.Padding(4);
             this.textUsernameRegister.Name = "textUsernameRegister";
             this.textUsernameRegister.Size = new System.Drawing.Size(199, 30);
             this.textUsernameRegister.TabIndex = 11;
@@ -133,7 +134,7 @@
             // btnAddUser
             // 
             this.btnAddUser.Location = new System.Drawing.Point(496, 447);
-            this.btnAddUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddUser.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(100, 28);
             this.btnAddUser.TabIndex = 12;
@@ -144,7 +145,7 @@
             // btnExit
             // 
             this.btnExit.Location = new System.Drawing.Point(951, 487);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(100, 28);
             this.btnExit.TabIndex = 13;
@@ -155,7 +156,7 @@
             // btnGoHome
             // 
             this.btnGoHome.Location = new System.Drawing.Point(16, 487);
-            this.btnGoHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGoHome.Margin = new System.Windows.Forms.Padding(4);
             this.btnGoHome.Name = "btnGoHome";
             this.btnGoHome.Size = new System.Drawing.Size(100, 28);
             this.btnGoHome.TabIndex = 14;
@@ -176,7 +177,7 @@
             // btnGoLogIn
             // 
             this.btnGoLogIn.Location = new System.Drawing.Point(583, 487);
-            this.btnGoLogIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGoLogIn.Margin = new System.Windows.Forms.Padding(4);
             this.btnGoLogIn.Name = "btnGoLogIn";
             this.btnGoLogIn.Size = new System.Drawing.Size(100, 28);
             this.btnGoLogIn.TabIndex = 16;
@@ -203,7 +204,7 @@
             this.Controls.Add(this.lblPasswordRegister);
             this.Controls.Add(this.lblUsernameRegister);
             this.Controls.Add(this.txtRegisterTitle);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Register";
             this.Text = "Register";
             this.ResumeLayout(false);

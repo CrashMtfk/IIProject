@@ -59,6 +59,18 @@
     <Compile Include="LogIn.Designer.cs">
       <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="MakeAppointment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MakeAppointment.Designer.cs">
+      <DependentUpon>MakeAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prices.Designer.cs">
+      <DependentUpon>Prices.cs</DependentUpon>
+    </Compile>
     <Compile Include="Profile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +90,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MakeAppointment.resx">
+      <DependentUpon>MakeAppointment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prices.resx">
+      <DependentUpon>Prices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>

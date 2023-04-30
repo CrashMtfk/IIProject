@@ -16,5 +16,17 @@ namespace RettiBrisca
         {
             InitializeComponent();
         }
+
+        private void btnGoProfile_Click(object sender, EventArgs e)
+        {
+            ProfilePageCall(); 
+        }
+
+        public void ProfilePageCall()
+        {
+            this.Hide();
+            Profile profilePage = new Profile();
+            profilePage.Show();
+        }
     }
 }

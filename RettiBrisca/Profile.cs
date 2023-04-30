@@ -35,7 +35,9 @@ namespace RettiBrisca
 
         private void btnMakeAppointment_Click(object sender, EventArgs e)
         {
-
+            MakeAppointment appointmentPage = new MakeAppointment();
+            appointmentPage.Show();
+            this.Hide();
         }
 
         private int GetNOPoints(string username)

@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace RettiBrisca
 {
     public partial class MakeAppointment : Form
     {
+        private SqlConnection DbConnection = new SqlConnection("Data Source=" +
+                "DESKTOP-GTQ68AU\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
+
         public MakeAppointment()
         {
             InitializeComponent();
+            SqlDataAdapter da = new SqlDataAdapter("SELECT Name FROM Frizer", DbConnection);
+            PopulateComboBox(da);
         }
 
         private void btnGoProfile_Click(object sender, EventArgs e)
@@ -27,6 +33,41 @@ namespace RettiBrisca
             this.Hide();
             Profile profilePage = new Profile();
             profilePage.Show();
+        }
+
+        private Boolean PopulateComboBox(SqlDataAdapter da)
+        {
+            int ok = 0;
+            try
+            {
+                DbConnection.Open();
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                comboBox1.DataSource = dt;
+                comboBox1.DisplayMember = "Name";
+
+                if(comboBox1.Items.Count > 0)
+                {
+                    ok = 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                DbConnection.Close();
+            }
+            if(ok == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

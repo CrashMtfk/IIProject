@@ -43,7 +43,11 @@ namespace RettiBrisca
 
         private void btnAddUser_Click(object sender, EventArgs e)
         {
-            RegisterUser();
+            string username = textUsernameRegister.Text;
+            string password = txtPasswordRegister.Text;
+            string fullName = txtFullNameRegister.Text;
+            string phoneNumber = txtPhoneRegister.Text;
+            RegisterUser(username,password,fullName,phoneNumber);
         }
 
         private Boolean UsernameExists(string username)
@@ -93,13 +97,9 @@ namespace RettiBrisca
             return true;
         }
 
-        private void RegisterUser()
+        private Boolean RegisterUser(string username, string password, string fullName, string phoneNumber)
         {
-            string username = textUsernameRegister.Text;
-            string password = txtPasswordRegister.Text;
-            string fullName = txtFullNameRegister.Text;
-            string phoneNumber = txtPhoneRegister.Text;
-
+            int ok = 0;     
             if (UsernameExists(username))
             {
                 MessageBox.Show("Exista deja un utilizator cu acest username. Te rugam alege alt username pentru a proceda mai departe.");
@@ -147,6 +147,7 @@ namespace RettiBrisca
                         comandaPuncte.ExecuteNonQuery();
 
                         MessageBox.Show("Inregistrare facuta cu succes!");
+                        ok = 1;
                     }
                     catch (Exception ex)
                     {
@@ -156,8 +157,14 @@ namespace RettiBrisca
                     {
                         DbConnection.Close();
                     }
+                    
                 }
             }
+            if(ok == 1)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

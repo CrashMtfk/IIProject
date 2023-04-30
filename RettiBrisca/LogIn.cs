@@ -42,14 +42,14 @@ namespace RettiBrisca
 
         private void btnLogUser_Click(object sender, EventArgs e)
         {
-            LoginUser();
-        }
-
-        private void LoginUser()
-        {
             string username = txtUsernameLogin.Text;
             string password = txtPasswordLogin.Text;
+            LoginUser(username,password);
+        }
 
+        private Boolean LoginUser(string username, string password)
+        {
+            int ok = 0;
             try
             {
                 DbConnection.Open();
@@ -64,6 +64,7 @@ namespace RettiBrisca
                 {
                     Data.Username = username;
                     Data.Password = password;
+                    ok = 1;
                     this.Hide();
                     Profile profilePage = new Profile();
                     profilePage.Show();
@@ -81,6 +82,15 @@ namespace RettiBrisca
             {
                 DbConnection.Close();
             }
+            if(ok == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+               
         }
     }
 }

@@ -36,9 +36,10 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(713, 12);
+            this.btnRegister.Location = new System.Drawing.Point(951, 15);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(75, 23);
+            this.btnRegister.Size = new System.Drawing.Size(100, 28);
             this.btnRegister.TabIndex = 0;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
@@ -46,9 +47,10 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(632, 12);
+            this.btnLogin.Location = new System.Drawing.Point(843, 15);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(100, 28);
             this.btnLogin.TabIndex = 1;
             this.btnLogin.Text = "Log In";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -56,18 +58,21 @@
             // 
             // btnPrices
             // 
-            this.btnPrices.Location = new System.Drawing.Point(89, 12);
+            this.btnPrices.Location = new System.Drawing.Point(119, 15);
+            this.btnPrices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrices.Name = "btnPrices";
-            this.btnPrices.Size = new System.Drawing.Size(75, 23);
+            this.btnPrices.Size = new System.Drawing.Size(100, 28);
             this.btnPrices.TabIndex = 2;
             this.btnPrices.Text = "Prices";
             this.btnPrices.UseVisualStyleBackColor = true;
+            this.btnPrices.Click += new System.EventHandler(this.btnPrices_Click);
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(713, 415);
+            this.btnExit.Location = new System.Drawing.Point(951, 511);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.Size = new System.Drawing.Size(100, 28);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -75,13 +80,14 @@
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnPrices);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.btnRegister);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Home";
             this.Text = "Home";
             this.ResumeLayout(false);

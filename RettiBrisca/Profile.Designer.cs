@@ -40,10 +40,11 @@
             // 
             this.txtUserName.BackColor = System.Drawing.SystemColors.Control;
             this.txtUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUserName.Location = new System.Drawing.Point(93, 56);
+            this.txtUserName.Location = new System.Drawing.Point(124, 69);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.ReadOnly = true;
-            this.txtUserName.Size = new System.Drawing.Size(100, 20);
+            this.txtUserName.Size = new System.Drawing.Size(132, 22);
             this.txtUserName.TabIndex = 0;
             this.txtUserName.Text = "User\'s Name";
             this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
@@ -51,26 +52,29 @@
             // lblUserPoints
             // 
             this.lblUserPoints.AutoSize = true;
-            this.lblUserPoints.Location = new System.Drawing.Point(82, 85);
+            this.lblUserPoints.Location = new System.Drawing.Point(109, 105);
+            this.lblUserPoints.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserPoints.Name = "lblUserPoints";
-            this.lblUserPoints.Size = new System.Drawing.Size(42, 13);
+            this.lblUserPoints.Size = new System.Drawing.Size(55, 17);
             this.lblUserPoints.TabIndex = 1;
             this.lblUserPoints.Text = "Points :";
             // 
             // txtUserPoints
             // 
-            this.txtUserPoints.Location = new System.Drawing.Point(130, 82);
+            this.txtUserPoints.Location = new System.Drawing.Point(173, 101);
+            this.txtUserPoints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUserPoints.Name = "txtUserPoints";
             this.txtUserPoints.ReadOnly = true;
-            this.txtUserPoints.Size = new System.Drawing.Size(100, 20);
+            this.txtUserPoints.Size = new System.Drawing.Size(132, 22);
             this.txtUserPoints.TabIndex = 8;
             this.txtUserPoints.Text = "User\'s points";
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(93, 262);
+            this.btnExit.Location = new System.Drawing.Point(124, 322);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(107, 23);
+            this.btnExit.Size = new System.Drawing.Size(143, 28);
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -78,9 +82,10 @@
             // 
             // btnMakeAppointment
             // 
-            this.btnMakeAppointment.Location = new System.Drawing.Point(93, 161);
+            this.btnMakeAppointment.Location = new System.Drawing.Point(124, 198);
+            this.btnMakeAppointment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMakeAppointment.Name = "btnMakeAppointment";
-            this.btnMakeAppointment.Size = new System.Drawing.Size(107, 23);
+            this.btnMakeAppointment.Size = new System.Drawing.Size(143, 28);
             this.btnMakeAppointment.TabIndex = 10;
             this.btnMakeAppointment.Text = "Make Appointment";
             this.btnMakeAppointment.UseVisualStyleBackColor = true;
@@ -88,24 +93,27 @@
             // 
             // btnPrices
             // 
-            this.btnPrices.Location = new System.Drawing.Point(93, 191);
+            this.btnPrices.Location = new System.Drawing.Point(124, 235);
+            this.btnPrices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPrices.Name = "btnPrices";
-            this.btnPrices.Size = new System.Drawing.Size(107, 23);
+            this.btnPrices.Size = new System.Drawing.Size(143, 28);
             this.btnPrices.TabIndex = 11;
             this.btnPrices.Text = "Prices";
             this.btnPrices.UseVisualStyleBackColor = true;
+            this.btnPrices.Click += new System.EventHandler(this.btnPrices_Click);
             // 
             // Profile
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(287, 335);
+            this.ClientSize = new System.Drawing.Size(383, 412);
             this.Controls.Add(this.btnPrices);
             this.Controls.Add(this.btnMakeAppointment);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.txtUserPoints);
             this.Controls.Add(this.lblUserPoints);
             this.Controls.Add(this.txtUserName);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Profile";
             this.Text = "Profile";
             this.ResumeLayout(false);

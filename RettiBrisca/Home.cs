@@ -35,5 +35,20 @@ namespace RettiBrisca
             logIn.Show();
             this.Hide();
         }
+
+        private void btnPrices_Click(object sender, EventArgs e)
+        {
+            if (Data.Username != null && Data.Password != null)
+            {
+                Prices pricesPage = new Prices();
+                pricesPage.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("First you have to login to see the prices page.");
+            }
+            
+        }
     }
 }

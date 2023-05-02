@@ -13,8 +13,11 @@ namespace RettiBrisca
 {
     public partial class MakeAppointment : Form
     {
+        //private SqlConnection DbConnection = new SqlConnection("Data Source=" +
+        //      "DESKTOP-GTQ68AU\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
         private SqlConnection DbConnection = new SqlConnection("Data Source=" +
-                "DESKTOP-GTQ68AU\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
+                "LAPTOP-GPJH9TCQ\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
+
 
         public MakeAppointment()
         {
@@ -35,7 +38,7 @@ namespace RettiBrisca
             profilePage.Show();
         }
 
-        private Boolean PopulateComboBox(SqlDataAdapter da)
+        public Boolean PopulateComboBox(SqlDataAdapter da)
         {
             int ok = 0;
             try

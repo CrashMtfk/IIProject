@@ -14,8 +14,10 @@ namespace RettiBrisca
 {
     public partial class Register : Form
     {
+        //private SqlConnection DbConnection = new SqlConnection("Data Source=" +
+        //      "DESKTOP-GTQ68AU\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
         private SqlConnection DbConnection = new SqlConnection("Data Source=" +
-                "DESKTOP-GTQ68AU\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
+                "LAPTOP-GPJH9TCQ\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
 
         public Register()
         {

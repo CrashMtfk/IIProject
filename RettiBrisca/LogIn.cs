@@ -13,9 +13,12 @@ namespace RettiBrisca
 {
     public partial class LogIn : Form
     {
+        //private SqlConnection DbConnection = new SqlConnection("Data Source=" +
+        //      "DESKTOP-GTQ68AU\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
         private SqlConnection DbConnection = new SqlConnection("Data Source=" +
-                "DESKTOP-GTQ68AU\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
-      
+                "LAPTOP-GPJH9TCQ\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
+
+
         public LogIn()
         {
             InitializeComponent();
@@ -47,7 +50,7 @@ namespace RettiBrisca
             LoginUser(username,password);
         }
 
-        private Boolean LoginUser(string username, string password)
+        public Boolean LoginUser(string username, string password)
         {
             int ok = 0;
             try
@@ -82,7 +85,7 @@ namespace RettiBrisca
             {
                 DbConnection.Close();
             }
-            if(ok == 1)
+            if (ok == 1)
             {
                 return true;
             }
@@ -90,7 +93,7 @@ namespace RettiBrisca
             {
                 return false;
             }
-               
+
         }
     }
 }

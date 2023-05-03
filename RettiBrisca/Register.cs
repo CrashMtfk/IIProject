@@ -7,17 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace RettiBrisca
 {
     public partial class Register : Form
     {
-        //private SqlConnection DbConnection = new SqlConnection("Data Source=" +
-        //      "DESKTOP-GTQ68AU\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
         private SqlConnection DbConnection = new SqlConnection("Data Source=" +
-                "LAPTOP-GPJH9TCQ\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
+              "DESKTOP-GTQ68AU\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
+        //private SqlConnection DbConnection = new SqlConnection("Data Source=" +
+        //        "LAPTOP-GPJH9TCQ\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
 
         public Register()
         {
@@ -147,6 +146,12 @@ namespace RettiBrisca
                         comandaPuncte.Parameters.AddWithValue("@ID_Client", ID_Client);
                         comandaPuncte.Parameters.AddWithValue("0", 0);
                         comandaPuncte.ExecuteNonQuery();
+
+                        string Rol = "User";
+                        SqlCommand comandaRol = new SqlCommand("INSERT INTO Roles(ID_Client, Role) VALUES (@ID_Client, @Rol)",DbConnection);
+                        comandaRol.Parameters.AddWithValue("@ID_Client", ID_Client);
+                        comandaRol.Parameters.AddWithValue("@Rol", Rol);
+                        comandaRol.ExecuteNonQuery();
 
                         MessageBox.Show("Inregistrare facuta cu succes!");
                         ok = 1;

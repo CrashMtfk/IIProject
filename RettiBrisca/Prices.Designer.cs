@@ -32,7 +32,9 @@
             this.boxFrizeri = new System.Windows.Forms.ComboBox();
             this.dataPreturi = new System.Windows.Forms.DataGridView();
             this.btnGoProfile = new System.Windows.Forms.Button();
+            this.couponList = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataPreturi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.couponList)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFrizer
@@ -54,6 +56,7 @@
             this.boxFrizeri.Name = "boxFrizeri";
             this.boxFrizeri.Size = new System.Drawing.Size(160, 24);
             this.boxFrizeri.TabIndex = 1;
+            this.boxFrizeri.SelectedIndexChanged += new System.EventHandler(this.boxFrizeri_SelectedIndexChanged);
             // 
             // dataPreturi
             // 
@@ -61,7 +64,7 @@
             this.dataPreturi.Location = new System.Drawing.Point(16, 48);
             this.dataPreturi.Margin = new System.Windows.Forms.Padding(4);
             this.dataPreturi.Name = "dataPreturi";
-            this.dataPreturi.Size = new System.Drawing.Size(343, 400);
+            this.dataPreturi.Size = new System.Drawing.Size(343, 228);
             this.dataPreturi.TabIndex = 2;
             // 
             // btnGoProfile
@@ -75,11 +78,22 @@
             this.btnGoProfile.UseVisualStyleBackColor = true;
             this.btnGoProfile.Click += new System.EventHandler(this.btnGoProfile_Click);
             // 
+            // couponList
+            // 
+            this.couponList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.couponList.Location = new System.Drawing.Point(16, 283);
+            this.couponList.Name = "couponList";
+            this.couponList.RowTemplate.Height = 24;
+            this.couponList.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.couponList.Size = new System.Drawing.Size(343, 165);
+            this.couponList.TabIndex = 4;
+            // 
             // Prices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(389, 513);
+            this.Controls.Add(this.couponList);
             this.Controls.Add(this.btnGoProfile);
             this.Controls.Add(this.dataPreturi);
             this.Controls.Add(this.boxFrizeri);
@@ -88,6 +102,7 @@
             this.Name = "Prices";
             this.Text = "Prices";
             ((System.ComponentModel.ISupportInitialize)(this.dataPreturi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.couponList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,5 +114,6 @@
         private System.Windows.Forms.ComboBox boxFrizeri;
         private System.Windows.Forms.DataGridView dataPreturi;
         private System.Windows.Forms.Button btnGoProfile;
+        private System.Windows.Forms.DataGridView couponList;
     }
 }

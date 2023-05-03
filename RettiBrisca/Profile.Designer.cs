@@ -34,6 +34,8 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnMakeAppointment = new System.Windows.Forms.Button();
             this.btnPrices = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.boxAppointment = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtUserName
@@ -41,7 +43,7 @@
             this.txtUserName.BackColor = System.Drawing.SystemColors.Control;
             this.txtUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUserName.Location = new System.Drawing.Point(124, 69);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.ReadOnly = true;
             this.txtUserName.Size = new System.Drawing.Size(132, 22);
@@ -62,7 +64,7 @@
             // txtUserPoints
             // 
             this.txtUserPoints.Location = new System.Drawing.Point(173, 101);
-            this.txtUserPoints.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUserPoints.Margin = new System.Windows.Forms.Padding(4);
             this.txtUserPoints.Name = "txtUserPoints";
             this.txtUserPoints.ReadOnly = true;
             this.txtUserPoints.Size = new System.Drawing.Size(132, 22);
@@ -71,8 +73,8 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(124, 322);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExit.Location = new System.Drawing.Point(124, 359);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(143, 28);
             this.btnExit.TabIndex = 9;
@@ -82,8 +84,8 @@
             // 
             // btnMakeAppointment
             // 
-            this.btnMakeAppointment.Location = new System.Drawing.Point(124, 198);
-            this.btnMakeAppointment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMakeAppointment.Location = new System.Drawing.Point(124, 211);
+            this.btnMakeAppointment.Margin = new System.Windows.Forms.Padding(4);
             this.btnMakeAppointment.Name = "btnMakeAppointment";
             this.btnMakeAppointment.Size = new System.Drawing.Size(143, 28);
             this.btnMakeAppointment.TabIndex = 10;
@@ -93,8 +95,8 @@
             // 
             // btnPrices
             // 
-            this.btnPrices.Location = new System.Drawing.Point(124, 235);
-            this.btnPrices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrices.Location = new System.Drawing.Point(124, 247);
+            this.btnPrices.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrices.Name = "btnPrices";
             this.btnPrices.Size = new System.Drawing.Size(143, 28);
             this.btnPrices.TabIndex = 11;
@@ -102,18 +104,37 @@
             this.btnPrices.UseVisualStyleBackColor = true;
             this.btnPrices.Click += new System.EventHandler(this.btnPrices_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 17);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Closest appointment:";
+            // 
+            // boxAppointment
+            // 
+            this.boxAppointment.Location = new System.Drawing.Point(148, 151);
+            this.boxAppointment.Name = "boxAppointment";
+            this.boxAppointment.ReadOnly = true;
+            this.boxAppointment.Size = new System.Drawing.Size(170, 22);
+            this.boxAppointment.TabIndex = 13;
+            // 
             // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(383, 412);
+            this.Controls.Add(this.boxAppointment);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPrices);
             this.Controls.Add(this.btnMakeAppointment);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.txtUserPoints);
             this.Controls.Add(this.lblUserPoints);
             this.Controls.Add(this.txtUserName);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Profile";
             this.Text = "Profile";
             this.ResumeLayout(false);
@@ -129,5 +150,7 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnMakeAppointment;
         private System.Windows.Forms.Button btnPrices;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox boxAppointment;
     }
 }

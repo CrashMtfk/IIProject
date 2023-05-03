@@ -62,17 +62,17 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(105, 133);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 24);
             this.comboBox1.TabIndex = 2;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CustomFormat = "MM/dd - HH:mm";
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(105, 175);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(160, 22);
             this.dateTimePicker1.TabIndex = 3;
@@ -90,17 +90,18 @@
             // btnCreateAppointment
             // 
             this.btnCreateAppointment.Location = new System.Drawing.Point(130, 224);
-            this.btnCreateAppointment.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCreateAppointment.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreateAppointment.Name = "btnCreateAppointment";
             this.btnCreateAppointment.Size = new System.Drawing.Size(100, 28);
             this.btnCreateAppointment.TabIndex = 5;
             this.btnCreateAppointment.Text = "Make Appointment";
             this.btnCreateAppointment.UseVisualStyleBackColor = true;
+            this.btnCreateAppointment.Click += new System.EventHandler(this.btnCreateAppointment_Click);
             // 
             // btnGoProfile
             // 
             this.btnGoProfile.Location = new System.Drawing.Point(130, 260);
-            this.btnGoProfile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGoProfile.Margin = new System.Windows.Forms.Padding(4);
             this.btnGoProfile.Name = "btnGoProfile";
             this.btnGoProfile.Size = new System.Drawing.Size(100, 28);
             this.btnGoProfile.TabIndex = 6;
@@ -120,7 +121,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitle);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MakeAppointment";
             this.Text = "MakeAppointment";
             this.ResumeLayout(false);

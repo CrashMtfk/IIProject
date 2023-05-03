@@ -13,10 +13,10 @@ namespace RettiBrisca
 {
     public partial class Profile : Form
     {
-        //private SqlConnection DbConnection = new SqlConnection("Data Source=" +
-        //      "DESKTOP-GTQ68AU\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
         private SqlConnection DbConnection = new SqlConnection("Data Source=" +
-                "LAPTOP-GPJH9TCQ\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
+              "DESKTOP-GTQ68AU\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
+        //private SqlConnection DbConnection = new SqlConnection("Data Source=" +
+        //        "LAPTOP-GPJH9TCQ\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
 
 
         public Profile()
@@ -24,6 +24,7 @@ namespace RettiBrisca
             InitializeComponent();
             txtUserName.Text = GetFullName(Data.Username);
             txtUserPoints.Text = GetNOPoints(Data.Username).ToString();
+            boxAppointment.Text = GetClosestAppointment();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -99,5 +100,36 @@ namespace RettiBrisca
                 MessageBox.Show("First you have to login to see the prices page.");
             }
         }
+
+        private string GetClosestAppointment()
+        {
+            string returnVal = "";
+            try
+            {
+                DbConnection.Open();  
+                SqlCommand comanda = new SqlCommand("SELECT ID_Client from Client WHERE Client.Username = @usernameClient", DbConnection);
+                comanda.Parameters.AddWithValue("@usernameClient", Data.Username);
+                object result = comanda.ExecuteScalar();
+                if(result != null)
+                {
+                    int ID_Client = (int)result;
+                    SqlCommand cmda = new SqlCommand("SELECT TOP 1 AppointmentDateAndTime FROM Appointment WHERE ID_Client = @ID_Client AND AppointmentDateAndTime >= GETDATE() ORDER BY AppointmentDateAndTime", DbConnection);
+                    cmda.Parameters.AddWithValue("ID_Client", ID_Client);
+                    cmda.ExecuteNonQuery();
+                    returnVal = cmda.ExecuteScalar().ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                DbConnection.Close();
+            }
+            return returnVal;
+        }
+
+  
     }
 }

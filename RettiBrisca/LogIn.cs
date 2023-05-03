@@ -13,10 +13,10 @@ namespace RettiBrisca
 {
     public partial class LogIn : Form
     {
-        //private SqlConnection DbConnection = new SqlConnection("Data Source=" +
-        //      "DESKTOP-GTQ68AU\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
         private SqlConnection DbConnection = new SqlConnection("Data Source=" +
-                "LAPTOP-GPJH9TCQ\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
+              "DESKTOP-GTQ68AU\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
+        //private SqlConnection DbConnection = new SqlConnection("Data Source=" +
+        //       "LAPTOP-GPJH9TCQ\\SQLEXPRESS01;Initial Catalog=BDD;Integrated Security=True");
 
 
         public LogIn()
@@ -59,18 +59,30 @@ namespace RettiBrisca
 
                 SqlCommand comanda = new SqlCommand("SELECT COUNT(*) FROM Client WHERE Username = @username AND Password = @password", DbConnection);
                 comanda.Parameters.AddWithValue("@Username", username);
-                comanda.Parameters.AddWithValue("@Password", password);
-
+                comanda.Parameters.AddWithValue("@Password", password);  
                 int count = (int)comanda.ExecuteScalar();
+
+                SqlCommand comandaFrizer = new SqlCommand("SELECT COUNT(*) FROM Frizer WHERE Username = @username AND Password = @password", DbConnection);
+                comandaFrizer.Parameters.AddWithValue("@Username", username);
+                comandaFrizer.Parameters.AddWithValue("@Password", password);
+                int countFrizer = (int)comandaFrizer.ExecuteScalar();
 
                 if (count > 0)
                 {
                     Data.Username = username;
                     Data.Password = password;
-                    ok = 1;
+                    ok = 1;       
                     this.Hide();
                     Profile profilePage = new Profile();
                     profilePage.Show();
+                }
+                else if (countFrizer > 0)
+                {
+                    Data.Username = username;
+                    Data.Password = password;
+                    ok = 1;
+
+                    
                 }
                 else
                 {
@@ -93,7 +105,6 @@ namespace RettiBrisca
             {
                 return false;
             }
-
         }
     }
 }

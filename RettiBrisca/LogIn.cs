@@ -81,8 +81,9 @@ namespace RettiBrisca
                     Data.Username = username;
                     Data.Password = password;
                     ok = 1;
-
-                    
+                    this.Hide();
+                    ProfileBarber profilePageBarber = new ProfileBarber();
+                    profilePageBarber.Show();                   
                 }
                 else
                 {

@@ -22,19 +22,18 @@ namespace RettiBrisca
         public Profile()
         {
             InitializeComponent();
-            txtUserName.Text = GetFullName(Data.Username);
-            txtUserPoints.Text = GetNOPoints(Data.Username).ToString();
-            boxAppointment.Text = GetClosestAppointment();
+            if (Data.Username != null)
+            {
+                txtUserName.Text = GetFullName(Data.Username);
+                txtUserPoints.Text = "0";
+                txtUserPoints.Text = GetNOPoints(Data.Username).ToString();
+                boxAppointment.Text = GetClosestAppointment();
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void txtUserName_TextChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void btnMakeAppointment_Click(object sender, EventArgs e)
@@ -51,10 +50,10 @@ namespace RettiBrisca
             {
                 DbConnection.Open();
                 SqlCommand comanda = new SqlCommand("SELECT Points.NumberOfPoints FROM Points INNER JOIN Client ON Points.ID_Client = Client.ID_Client WHERE Client.Username = @username", DbConnection);
-                comanda.Parameters.AddWithValue("@Username", username);
+                comanda.Parameters.AddWithValue("@username", username);
                 result = Convert.ToInt32(comanda.ExecuteScalar());
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -72,9 +71,9 @@ namespace RettiBrisca
             {
                 DbConnection.Open();
                 SqlCommand comanda = new SqlCommand("SELECT FullName FROM Client WHERE Client.Username = @username", DbConnection);
-                comanda.Parameters.AddWithValue("@Username", username);
+                comanda.Parameters.AddWithValue("@username", username);
 
-                result = (string)comanda.ExecuteScalar();      
+                result = (string)comanda.ExecuteScalar();
             }
             catch (Exception ex)
             {
@@ -103,20 +102,23 @@ namespace RettiBrisca
 
         private string GetClosestAppointment()
         {
-            string returnVal = "";
+            string returnVal = "No Appointment";
             try
             {
-                DbConnection.Open();  
+                DbConnection.Open();
                 SqlCommand comanda = new SqlCommand("SELECT ID_Client from Client WHERE Client.Username = @usernameClient", DbConnection);
                 comanda.Parameters.AddWithValue("@usernameClient", Data.Username);
                 object result = comanda.ExecuteScalar();
-                if(result != null)
+                if (result != null)
                 {
                     int ID_Client = (int)result;
                     SqlCommand cmda = new SqlCommand("SELECT TOP 1 AppointmentDateAndTime FROM Appointment WHERE ID_Client = @ID_Client AND AppointmentDateAndTime >= GETDATE() ORDER BY AppointmentDateAndTime", DbConnection);
-                    cmda.Parameters.AddWithValue("ID_Client", ID_Client);
-                    cmda.ExecuteNonQuery();
-                    returnVal = cmda.ExecuteScalar().ToString();
+                    cmda.Parameters.AddWithValue("@ID_Client", ID_Client);
+                    object result2 = cmda.ExecuteScalar();
+                    if (result2 != null)
+                    {
+                        returnVal = result2.ToString();
+                    }
                 }
             }
             catch (Exception ex)
@@ -130,6 +132,6 @@ namespace RettiBrisca
             return returnVal;
         }
 
-  
+
     }
 }

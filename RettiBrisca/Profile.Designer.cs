@@ -49,7 +49,6 @@
             this.txtUserName.Size = new System.Drawing.Size(132, 22);
             this.txtUserName.TabIndex = 0;
             this.txtUserName.Text = "User\'s Name";
-            this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
             // lblUserPoints
             // 

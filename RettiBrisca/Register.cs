@@ -67,6 +67,16 @@ namespace RettiBrisca
                     }
                     
                 }
+                using (SqlCommand comanda2 = new SqlCommand("SELECT COUNT(*) FROM Frizer WHERE Username = @username", DbConnection))
+                {
+                    comanda2.Parameters.AddWithValue("@username", username);
+                    int count2 = (int)comanda2.ExecuteScalar();
+                    if (count2 > 0)
+                    {
+                        ok = 0;
+                    }
+
+                }
             }
             catch(Exception ex)
             {

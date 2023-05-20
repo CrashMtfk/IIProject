@@ -144,5 +144,59 @@ namespace RettiBrisca
             }
             else return false;
         }
+
+        public Boolean AppointmentT(string nameFrizer, DateTime dt, string usernameClient)
+        {
+            int ok = 0;
+            int selInd = comboBox1.SelectedIndex;
+
+          
+                
+                {
+                    try
+                    {
+                        DbConnection.Open();
+                        SqlCommand comanda = new SqlCommand("SELECT ID_Frizer from Frizer WHERE Frizer.FullName = @nameFrizer", DbConnection);
+                        comanda.Parameters.AddWithValue("@nameFrizer", nameFrizer);
+                        SqlCommand comanda2 = new SqlCommand("SELECT ID_Client from Client WHERE Client.Username = @usernameClient", DbConnection);
+                        comanda2.Parameters.AddWithValue("@usernameClient", usernameClient);
+                        object result = comanda.ExecuteScalar();
+                        object result2 = comanda2.ExecuteScalar();
+                        if (result != null && result2 != null)
+                        {
+                            DateTime AppointmentDateAndTime = dt;
+                            int ID_Client = (int)result2;
+                            int ID_Frizer = (int)result;
+                            SqlCommand cmd = new SqlCommand("INSERT INTO Appointment (ID_Frizer, ID_Client, AppointmentDateAndTime) VALUES (@ID_Frizer, @ID_Client, @AppointmentDateAndTime)", DbConnection);
+                            cmd.Parameters.AddWithValue("@ID_Frizer", ID_Frizer);
+                            cmd.Parameters.AddWithValue("@ID_Client", ID_Client);
+                            cmd.Parameters.AddWithValue("@AppointmentDateAndTime", AppointmentDateAndTime);
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Programarea a fost facuta.");
+                            ok = 1;
+
+                            SqlCommand pointsIncrease = new SqlCommand("UPDATE Points SET NumberOfPoints = NumberOfPoints + 35 WHERE ID_Client = @ID_Client", DbConnection);
+                            pointsIncrease.Parameters.AddWithValue("@ID_Client", ID_Client);
+                            pointsIncrease.ExecuteNonQuery();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        DbConnection.Close();
+                    }
+
+                }
+            
+            
+            if (ok == 1)
+            {
+                return true;
+            }
+            else return false;
+        }
     }
 }

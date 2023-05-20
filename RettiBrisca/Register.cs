@@ -108,7 +108,7 @@ namespace RettiBrisca
             return true;
         }
 
-        private Boolean RegisterUser(string username, string password, string fullName, string phoneNumber)
+        public Boolean RegisterUser(string username, string password, string fullName, string phoneNumber)
         {
             int ok = 0;     
             if (UsernameExists(username))
